@@ -4,6 +4,8 @@ const ejs = require('ejs')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const BlogPost = require('./models/BlogPost');
+const fileUpload = require('express-fileupload')
+    
 
 mongoose.connect('mongodb://192.168.0.11/my_database', {useNewUrlParser:true, useUnifiedTopology: true});
 
@@ -13,6 +15,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(fileUpload())
 
 // -- GETs: Rendering pages --
 app.get('/', async (req, res) => {
@@ -50,13 +53,23 @@ app.get('/posts/new', (req, res) => {
 })
 
 app.post('/posts/store', async (req, res) => {
-    console.log(req.body)
+    let image = req.files.image;
+    image.mv(path.resolve(__dirname, 'public/img', image.name), async (error) => {
+        await BlogPost.create({
+            ...req.body, 
+            image:'/img/' + image.name
+        }) 
+        res.redirect('/')
+    })
+
     // model creates a new doc with browser data into my_database
     // use ES8 ... async and await
+    /*
     await BlogPost.create(req.body, (error, blogpost) => {
         //wait before redirect:
         res.redirect('/')
-    })    
+    })
+    */    
 })
 
 app.listen(4000, () => {
