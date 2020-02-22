@@ -1,76 +1,57 @@
 const express = require('express')
-const path = require('path')
+//const path = require('path')
 const ejs = require('ejs')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const BlogPost = require('./models/BlogPost');
+//const BlogPost = require('./models/BlogPost');
 const fileUpload = require('express-fileupload')
-    
+
+
+
+const validateMiddleWare = require('./middleware/validationMiddleware')
+
 
 mongoose.connect('mongodb://192.168.0.11/my_database', {useNewUrlParser:true, useUnifiedTopology: true});
 
 const app = new express()
+
+// using ejs engine
 app.set('view engine', 'ejs')
 
+//applying middlewares
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileUpload())
+app.use('/post/store', validateMiddleWare)
 
 // -- GETs: Rendering pages --
-app.get('/', async (req, res) => {
-    const blogposts = await BlogPost.find({})
-    //console.log(blogposts);
-    res.render('index', {
-        blogposts
-    }); //rendering file views/index.ejs
-})
+const renderHomeController = require('./controllers/renderHome')
+app.get('/', renderHomeController)
 
-app.get('/about', (req, res) => {
-    res.render('about')  //rendering file views/about.ejs
-})
+const aboutController = require('./controllers/getAbout')
+app.get('/about', aboutController)
 
-app.get('/contact', (req, res) => {
-    res.render('contact')  //rendering file views/ConstantSourceNode.ejs
-})
+const contactController = require('./controllers/getContact')
+app.get('/contact', contactController)
 
-app.get('/post', (req, res) => {
-    res.render('post')  //rendering file views/post.ejs
-})
+const postController = require('./controllers/getPost')
+app.get('/post', postController)
 
-app.get('/post/:id', async (req, res) => {
-    const blogpost = await BlogPost.findById(req.params.id)
-    res.render('post', {
-        blogpost
-    })  //rendering file views/post.ejs
-})
+const postByIdController = require('./controllers/getPostById')
+app.get('/post/:id', postByIdController)
 
 
 // -- POSTs: form data to & frow my_database --
+const newPostController = require('./controllers/newPost')
+app.get('/posts/new', newPostController)
 
-app.get('/posts/new', (req, res) => {    
-    res.render('create')
-})
+// use ES8 ... async and await
+const writePostController = require('./controllers/writePostToDbase')
+app.post('/posts/store', writePostController)
 
-app.post('/posts/store', async (req, res) => {
-    let image = req.files.image;
-    image.mv(path.resolve(__dirname, 'public/img', image.name), async (error) => {
-        await BlogPost.create({
-            ...req.body, 
-            image:'/img/' + image.name
-        }) 
-        res.redirect('/')
-    })
-
-    // model creates a new doc with browser data into my_database
-    // use ES8 ... async and await
-    /*
-    await BlogPost.create(req.body, (error, blogpost) => {
-        //wait before redirect:
-        res.redirect('/')
-    })
-    */    
-})
+const deletePostController = require('./controllers/deletePost')
+app.post('/delete/:id', deletePostController)
 
 app.listen(4000, () => {
     console.log('App listening on port 4000')
