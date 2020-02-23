@@ -1,14 +1,14 @@
 # [RoEm Blog uses UI Template from Start Bootstrap ](https://startbootstrap.com/template-overviews/clean-blog/)
 
-[RoEm Blog](https://github.com/hurricanemark/RoEmBlog) uses a stylish, responsive blog theme from [Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/) as a base UI looks and feel. We took it and refactor into MVC structure.  Then implemented the full MERN stack enabling a functional web blog. 
+[RoEm Blog](https://github.com/hurricanemark/RoEmBlog) uses a stylish, responsive blog theme from [Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/) as a base UI looks and feel. We took it and refactor into MVC structure.  Then implemented the full MERN stack enabling a functional web blog.  
 
-## Preview
+## Preview  
 
 ![RoEm Blog Preview](https://github.com/hurricanemark/RoEmBlog/blob/master/public/img/Index.PNG)
 
 **[Create blog](https://github.com/hurricanemark/RoEmBlog/blob/master/public/img/NewPost.PNG)**
 
-## Status
+## Status  
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-clean-blog/master/LICENSE)
 [![npm version](https://img.shields.io/npm/v/startbootstrap-clean-blog.svg)](https://www.npmjs.com/package/startbootstrap-clean-blog)
