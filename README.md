@@ -1,4 +1,4 @@
-# [RoEm Blog uses UI Template from Start Bootstrap ](https://startbootstrap.com/template-overviews/clean-blog/)
+# [RoEm Blog uses UI Template from Start Bootstrap ](https://github.com/hurricanemark/RoEmBlog)
 
 [RoEm Blog](https://github.com/hurricanemark/RoEmBlog) uses a stylish, responsive blog theme from [Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/) as a base UI looks and feel. We took it and refactor into MVC structure.  Then implemented the full MERN stack enabling a functional web blog.  
 
