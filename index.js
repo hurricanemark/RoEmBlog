@@ -11,7 +11,7 @@ const fileUpload = require('express-fileupload')
 const validateMiddleWare = require('./middleware/validationMiddleware')
 
 
-mongoose.connect('mongodb://192.168.0.11/my_database', {useNewUrlParser:true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser:true, useUnifiedTopology: true});
 
 const app = new express()
 
