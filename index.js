@@ -13,6 +13,7 @@ const validateMiddleWare = require('./middleware/validationMiddleware')
 const authMiddleware = require('./middleware/authMiddleware')
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware')
 
+mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb://192.168.0.11/my_database', 
     {useNewUrlParser:true, useUnifiedTopology: true});
 

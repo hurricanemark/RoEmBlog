@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = (req, res) => {
     User.create(req.body, (error, user) => {
         if (error) {
-            const validateErrors = Object.keys(error.errors).map(key => error.errors[key].message)
+            const validationErrors = Object.keys(error.errors).map(key => error.errors[key].message)
             //req.session.validateErrors = validateErrors
             req.flash('validationErrors', validationErrors)
             req.flash('data', req.body)
