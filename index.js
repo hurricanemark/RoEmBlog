@@ -22,8 +22,8 @@ mongoose.connect('mongodb://192.168.0.11/my_database',
     {useNewUrlParser:true, useUnifiedTopology: true});
 */
 /* connect to mongodb atlas */
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {useNewUrlParser:true, useUnifiedTopology: true} );
-
+//mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {useNewUrlParser:true, useUnifiedTopology: true} );
+mongoose.connect('mongodb+srv://markn:markn123$@cluster0-brf1j.mongodb.net/my_database', {useNewUrlParser:true, useUnifiedTopology: true} );
 const app = new express()
 // using ejs engine
 app.set('view engine', 'ejs')
