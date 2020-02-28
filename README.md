@@ -79,6 +79,13 @@ Et voila!
 - To rename your site on heroku:  
 `heroku apps:rename newname --app oldname`  
 
+## Caviats
+
+Note that Heroku hosting employs container technology; i.e. the filesystem is ephemeral.  Any changess to the filesystem while dyno is running is only last until that dyno is shutdown or restarted.  
+
+Each dyno boots with a clean copy of your latest deploy.  Any file uploaded during previous session no longer exist.
+
+Since Heroku is not suitable for persistent storage of data, uploads should be stored at dedicated storage service such as using a database, S3 bit bucket, etc.  
 
 ## Credits
 
