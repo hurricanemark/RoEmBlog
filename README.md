@@ -6,7 +6,7 @@
 
 ![RoEm Blog Preview](https://github.com/hurricanemark/RoEmBlog/blob/master/public/img/Index.PNG)
 
-**[Create blog](https://github.com/hurricanemark/RoEmBlog/blob/master/public/img/NewPost.PNG)**
+**[Live demo](https://roemblog.herokuapp.com/)**
 
 ## Status  
 
