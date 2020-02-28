@@ -36,9 +36,14 @@ app.use(fileUpload())
 app.use('/post/store', validateMiddleWare)
 app.use(flash());
 
-app.listen(4000, () => {
-    console.log('App listening on port 4000')
+let PORT = process.env.PORT;
+if (port == null || port == "") {
+    port = 4000;
+}
+app.listen(port, () => {
+    console.log('RoEm Blog is listening...')
 })
+
 app.use(expressSession({
     secret: 'keyboard cat',
     resave: false,
