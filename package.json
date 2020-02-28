@@ -1,9 +1,9 @@
 {
   "title": "RoEm Blog",
-  "name": "RolandEmily Blog",
+  "name": "RolandEmilyBlog",
   "version": "5.0.8",
   "scripts": {
-    "start": "nodemon index.js --inspect --no-deprecation --unhandled-rejections=strict"
+    "start": "nodemon index.js"
   },
   "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
   "keywords": [
