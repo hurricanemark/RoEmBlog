@@ -65,7 +65,9 @@ _ Update package.json with the following:
 >    console.log('App listening...')  
 >  })    
 
-- Deploy to heroku (make sure all files are synced with origin on github):
+- Deploy to heroku (make sure all files are synced with origin on github):  
++ Set heroku config variables:  
+`heroku config:set MONGODB_CONNECTION_STRING=mongodb+srv://[username]:[password]@cluster2-brf1j.mongodb.net/my_database`  
 
 `heroku create`  
 `git push heroku master`  
