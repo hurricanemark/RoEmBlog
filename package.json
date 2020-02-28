@@ -1,6 +1,6 @@
 {
   "title": "RoEm Blog",
-  "name": "RolandEmilyBlog",
+  "name": "roland-emily-blog",
   "version": "5.0.8",
   "scripts": {
     "start": "nodemon index.js"
