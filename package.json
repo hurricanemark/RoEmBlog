@@ -3,7 +3,7 @@
   "name": "startbootstrap-clean-blog",
   "version": "5.0.8",
   "scripts": {
-    "start": "nodemon index.js --inspect --no-deprecation"
+    "start": "nodemon index.js --inspect --no-deprecation --unhandled-rejections=strict"
   },
   "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
   "keywords": [
@@ -34,6 +34,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "4.3.1",
     "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6",

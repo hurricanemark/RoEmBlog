@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 //const path = require('path')
 const ejs = require('ejs');
@@ -14,11 +15,16 @@ const authMiddleware = require('./middleware/authMiddleware')
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware')
 
 mongoose.set('useCreateIndex', true);
+
+/* connect to local mongodb server */
+/*
 mongoose.connect('mongodb://192.168.0.11/my_database', 
     {useNewUrlParser:true, useUnifiedTopology: true});
+*/
+/* connect to mongodb atlas */
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {useNewUrlParser:true, useUnifiedTopology: true} );
 
 const app = new express()
-
 // using ejs engine
 app.set('view engine', 'ejs')
 
