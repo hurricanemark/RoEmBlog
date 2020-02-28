@@ -41,6 +41,41 @@ To begin using this template, choose one of the following options to get started
 > }
 
 
+### Deploy on Heroku  
+- (Recommend) follow instruction on deploying NodeJS on Heroku.  
+- Push your code onto github
+- Sign up for heroku account  
+- Install Heroku commandline  
+- Login heroku from your terminal starting at your project root folder.  
+- Create file named Procfile and insert the following:
+> web: node index.js  
+_ Update package.json with the following:  
+> ...  
+> "license": "MIT",  
+> "engines": {  
+>    "node": "13.5.0"    
+> },  
+- Because Heroku automatically sets up an environment variable process.env.PORT, ou have to specify this in *index.js*  
+> let port = process.env.PORT;
+> if (port == null || port == "") {  
+>    port = 12345;  
+> }
+>
+> app.listen(port, () => {
+>    console.log('App listening...')  
+>  })    
+
+- Deploy to heroku (make sure all files are synced with origin on github):
+
+`heroku create`  
+`git push heroku master`  
+
+Et voila!  
+
+- To rename your site on heroku:  
+`heroku apps:rename newname --app oldname`  
+
+
 ## Credits
 
 Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
