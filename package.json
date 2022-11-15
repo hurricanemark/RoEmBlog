@@ -3,7 +3,8 @@
   "name": "roland-emily-blog",
   "version": "5.0.8",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
   "keywords": [
@@ -14,13 +15,14 @@
     "theme",
     "template"
   ],
+  "demo": "https://roemblog.herokuapp.com/",
   "homepage": "https://startbootstrap.com/template-overviews/clean-blog",
   "bugs": {
     "url": "https://github.com/BlackrockDigital/startbootstrap-clean-blog/issues",
     "email": "feedback@startbootstrap.com"
   },
   "license": "MIT",
-  "engines":{
+  "engines": {
     "node": "13.5.0"
   },
   "author": "Mark Nguyen",
@@ -29,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BlackrockDigital/startbootstrap-clean-blog.git"
+    "url": "git+https://github.com/hurricanemark/RoEmBlog.git"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.10.2",
@@ -44,7 +46,8 @@
     "express-session": "^1.17.0",
     "jquery": "3.4.1",
     "mongoose": "^5.9.1",
-    "mongoose-unique-validator": "^2.0.3"
+    "mongoose-unique-validator": "^2.0.3",
+    "startbootstrap-resume": "^7.0.5"
   },
   "devDependencies": {
     "browser-sync": "2.26.7",

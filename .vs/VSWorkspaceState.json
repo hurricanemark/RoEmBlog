@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\controllers",
+    "\\Local settings (.vs)",
+    "\\mail",
+    "\\middleware",
+    "\\models",
+    "\\public",
+    "\\scss",
+    "\\views",
+    "\\views\\layouts"
+  ],
+  "SelectedNode": "\\views\\register.ejs",
+  "PreviewInSolutionExplorer": false
+}

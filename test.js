@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const BlogPost = require('./models/BlogPost');
 
-mongoose.connect('mongodb://192.168.0.11/my_database', {useNewUrlParser:true});
+mongoose.connect('mongodb://localhost/RoEmiBlog', {useNewUrlParser:true});
 BlogPost.create({ 
     title: 'The Morning Garden East of October', 
     body: 'Almost heaven, east october.  Green shoots of swiss chards, Cherockee tomatoes.  Life is simpler here, quiet and crisp; Tardie taste of kales, honey sweet of apricots.',

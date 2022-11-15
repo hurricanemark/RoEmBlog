@@ -40,7 +40,7 @@ if (port == null || port == "") {
     port = 4000;
 }
 app.listen(port, () => {
-    console.log('RoEm Blog is listening...')
+    console.log('RoEm Blog is listening on port ' + port + ' ...')
 })
 
 app.use(expressSession({
